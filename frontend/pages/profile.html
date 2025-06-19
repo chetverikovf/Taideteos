@@ -1,0 +1,32 @@
+<!-- frontend/pages/profile.html -->
+<div id="profile-loader">
+    <h2>Загрузка профиля...</h2>
+</div>
+
+<div id="profile-content" style="display: none;">
+    <h1 id="profile-username"></h1>
+    <p class="lead">
+        Рейтинг графов: 
+        <span id="profile-likes" class="badge bg-primary">▲ 0</span>
+        <span id="profile-dislikes" class="badge bg-danger">▼ 0</span>
+    </p>
+
+    <hr>
+
+    <div class="row mt-4">
+        <!-- Колонка для созданных графов -->
+        <div class="col-md-6">
+            <h3>Мои графы</h3>
+            <div id="owned-graphs-list" class="list-group">
+                <!-- Ссылки на графы будут здесь -->
+            </div>
+        </div>
+        <!-- Колонка для изучаемых графов -->
+        <div class="col-md-6">
+            <h3>Изучаемые графы</h3>
+            <div id="learning-graphs-list" class="list-group">
+                <!-- Ссылки на графы будут здесь -->
+            </div>
+        </div>
+    </div>
+</div>

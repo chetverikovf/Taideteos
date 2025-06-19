@@ -1,0 +1,67 @@
+<!-- frontend/pages/view_graph.html -->
+<!-- Контейнер для информации о графе -->
+<div id="graph-info-container" class="mb-4">
+    <h1>Загрузка...</h1> <!-- Простая заглушка -->
+</div>
+
+<!-- Контейнер для рендеринга графа Cytoscape -->
+<div style="position: relative;">
+    <div id="cy" style="height: 70vh; width: 100%; border: 1px solid #dee2e6; border-radius: .375rem;">
+        <!-- Cytoscape будет отрисован здесь -->
+    </div>
+
+    <!-- ПАНЕЛЬ УПРАВЛЕНИЯ НАВИГАЦИЕЙ -->
+    <div id="cy-nav-controls" style="position: absolute; top: 10px; right: 10px;">
+        <div class="btn-group-vertical" role="group">
+            <button id="zoom-in-btn" type="button" class="btn btn-sm btn-secondary">+</button>
+            <button id="zoom-out-btn" type="button" class="btn btn-sm btn-secondary">-</button>
+            <button id="fit-btn" type="button" class="btn btn-sm btn-secondary">⛶</button>
+        </div>
+    </div>
+</div>
+
+<!-- Блок для комментариев -->
+<div id="comments-section" class="mt-5">
+    <h2>Комментарии</h2>
+
+    <!-- Форма для добавления нового комментария (видна только залогиненным) -->
+    <div id="add-comment-form-container" style="display: none;">
+        <form id="add-comment-form" class="mb-4">
+            <div class="mb-3">
+                <textarea class="form-control" id="comment-content" rows="3" placeholder="Оставьте ваш комментарий..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+    <div id="comment-login-prompt" class="mb-4" style="display: none;">
+        <p><a href="/login" data-link>Войдите</a>, чтобы оставить комментарий.</p>
+    </div>
+
+
+    <!-- Список комментариев -->
+    <div id="comments-list">
+        <p>Загрузка комментариев...</p>
+    </div>
+
+    <!-- Кнопка "Загрузить еще" для ленивой загрузки -->
+    <div id="load-more-comments-container" class="text-center mt-4" style="display: none;">
+        <button id="load-more-comments-btn" class="btn btn-secondary">Загрузить еще</button>
+    </div>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ДЛЯ ДЕЙСТВИЙ С УЗЛОМ В РЕЖИМЕ ПРОСМОТРА -->
+<div class="modal fade" id="viewNodeActionModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewNodeActionModalTitle">Узел</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-grid gap-2" id="viewNodeActionButtons">
+                    <!-- Кнопки вставлены динамически через JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

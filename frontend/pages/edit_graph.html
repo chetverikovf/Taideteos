@@ -1,0 +1,79 @@
+<!-- frontend/pages/edit_graph.html -->
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+        <h1 id="graph-name">Редактирование графа...</h1>
+        <a href="#" id="view-graph-link" data-link>← Вернуться к просмотру</a>
+    </div>
+    <!-- Панель инструментов -->
+    <div class="btn-group" role="group">
+        <button id="add-node-btn" type="button" class="btn btn-outline-primary">Добавить узел</button>
+        <button id="add-edge-btn" type="button" class="btn btn-outline-secondary">Добавить связь</button>
+    </div>
+</div>
+
+<div id="editor-instructions" class="alert alert-info" role="alert" style="display: none;">
+    Подсказка появится здесь.
+</div>
+
+<div style="position: relative;">
+    <div id="cy-edit" style="height: 70vh; width: 100%; border: 1px solid #dee2e6; border-radius: .375rem;">
+        <!-- Cytoscape будет отрисован здесь -->
+    </div>
+
+    <!-- НОВАЯ ПАНЕЛЬ УПРАВЛЕНИЯ НАВИГАЦИЕЙ -->
+    <div id="cy-nav-controls" style="position: absolute; top: 10px; right: 10px;">
+        <div class="btn-group-vertical" role="group">
+            <button id="zoom-in-btn" type="button" class="btn btn-sm btn-secondary">+</button>
+            <button id="zoom-out-btn" type="button" class="btn btn-sm btn-secondary">-</button>
+            <button id="fit-btn" type="button" class="btn btn-sm btn-secondary">⛶</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-2">
+    <small class="text-muted">Кликните на элемент для удаления, перетаскивайте узлы для изменения их позиции.</small>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ДЛЯ СОЗДАНИЯ УЗЛА -->
+<div class="modal fade" id="addNodeModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Добавить новый узел</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-node-modal-form">
+                    <div class="mb-3">
+                        <label for="new-node-name" class="form-label">Имя узла</label>
+                        <input type="text" class="form-control" id="new-node-name" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" id="save-node-btn">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ДЛЯ ДЕЙСТВИЙ С УЗЛОМ -->
+<div class="modal fade" id="nodeActionModal" tabindex="-1">
+    <div class="modal-dialog modal-sm"> <!-- modal-sm делает окно компактнее -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="nodeActionModalTitle">Действия</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary" id="edit-node-content-btn">Редактировать контент</button>
+                    <button type="button" class="btn btn-danger" id="delete-node-btn">Удалить узел</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

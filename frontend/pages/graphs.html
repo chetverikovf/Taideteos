@@ -1,0 +1,28 @@
+<h1 class="mb-4">Каталог графов</h1>
+<div class="card bg-light mb-4">
+    <div class="card-body">
+        <form id="filter-form" class="row g-3 align-items-center">
+            <div class="col-md-8">
+                <label for="search-input" class="visually-hidden">Поиск</label>
+                <input type="search" class="form-control" id="search-input" placeholder="Поиск...">
+                <small class="text-primary">Минимум 3 символа для поиска.</small>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="sort-by-select">Сортировать:</label>
+                    <select class="form-select" id="sort-by-select">
+                        <option value="date_desc" selected>Сначала новые</option>
+                        <option value="rating_desc">По рейтингу</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="graphs-list" class="row">
+    <!-- Карточки графов будут вставлены сюда -->
+    <p>Загрузка...</p>
+</div>
+<div id="pagination-controls" class="d-flex justify-content-center mt-4">
+    <!-- Кнопки пагинации появятся здесь -->
+</div>

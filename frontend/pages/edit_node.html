@@ -1,0 +1,27 @@
+<!-- frontend/pages/edit_node.html -->
+<div class="mb-3">
+    <h2 id="node-name-header">Редактирование узла...</h2>
+    <a href="#" id="back-to-graph-link" data-link>← Вернуться к редактированию графа</a>
+</div>
+
+<div class="row">
+    <!-- Панель ввода -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="node-content-editor" class="form-label">Содержимое (Markdown и LaTeX)</label>
+            <textarea id="node-content-editor" class="form-control" rows="20" placeholder="Введите текст..."></textarea>
+        </div>
+    </div>
+    <!-- Панель предпросмотра -->
+    <div class="col-md-6">
+        <label class="form-label">Предпросмотр</label>
+        <div id="node-content-preview" class="p-3 border rounded" style="min-height: 465px; background-color: rgba(255,255,255,0.05);">
+            <!-- Результат рендеринга появится здесь -->
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 text-center">
+    <button id="save-node-content-btn" class="btn btn-primary w-50">Сохранить изменения</button>
+    <div id="save-status" class="mt-2" style="display: none;"></div>
+</div>
