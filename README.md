@@ -38,6 +38,7 @@
     ```
 
 2.  **Настройка Backend:**
+    ```bash
     cd backend
     uv sync
     source .venv/bin/activate  # для Linux
@@ -49,8 +50,8 @@
     # Запуск сервера
     uvicorn backend.main:app --reload
     
-    База данных будет в директории выше
-
+    #База данных будет в директории выше
+    ```
 3.  **Запуск Frontend:**
     Фронтенд обслуживается сервером FastAPI. Просто откройте браузер.
 
