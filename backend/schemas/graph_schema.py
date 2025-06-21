@@ -12,8 +12,6 @@ from .graph_base_schemas import GraphInList, PaginatedGraphs  # noqa: F401
 class CytoscapeNodeData(BaseModel):
     id: str # Cytoscape требует строковый id
     label: str
-    # Дополнительные данные, если понадобятся
-    # content: str 
 
 class CytoscapeEdgeData(BaseModel):
     id: str # Cytoscape требует строковый id

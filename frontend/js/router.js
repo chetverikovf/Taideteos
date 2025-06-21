@@ -98,7 +98,6 @@ async function renderGraphEditor(graphId) {
                 await api.updateNode(node.id(), { position_x: node.position().x, position_y: node.position().y });
             } catch (error) {
                 console.error("Ошибка обновления позиции:", error);
-                // Можно добавить уведомление для пользователя
             }
         });
 

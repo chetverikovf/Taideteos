@@ -50,6 +50,5 @@ async def read_comments(
     """
     Получает комментарии для графа с пагинацией.
     """
-    # Проверку существования графа можно опустить, вернется просто пустой список
     comments = await comment_crud.get_comments_for_graph(db, graph_id=graph_id, skip=skip, limit=limit)
     return comments

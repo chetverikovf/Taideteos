@@ -40,11 +40,10 @@ app.add_middleware(
 )
 
 # --- Подключение роутеров API ---
-# Убедитесь, что ВСЕ префиксы начинаются с /api/v1/
 app.include_router(users.router, prefix="/api/v1/users", tags=["users"])
 app.include_router(graphs.router, prefix="/api/v1/graphs", tags=["graphs"])
-app.include_router(nodes.router, prefix="/api/v1/nodes", tags=["nodes"]) # <--- ПРОВЕРЬТЕ ЭТУ СТРОКУ
-app.include_router(edges.router, prefix="/api/v1/edges", tags=["edges"]) # <--- И ЭТУ СТРОКУ
+app.include_router(nodes.router, prefix="/api/v1/nodes", tags=["nodes"]) 
+app.include_router(edges.router, prefix="/api/v1/edges", tags=["edges"]) 
 app.include_router(comments.router, prefix="/api/v1", tags=["comments"])
 
 # --- Настройка для обслуживания одностраничного приложения (SPA) ---
